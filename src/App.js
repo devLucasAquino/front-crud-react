@@ -29,11 +29,11 @@ function App() {
         </input>
       </div>
       <div className='buttonContainer'>
-        <ButtonGravar novoSabor={sabor}/>
+        
         {/* <ButtonAlterar/> */}
       </div>
 
-      <ListarItens/>
+      <ListarItens currentSabor={sabor}/>
 
     </div>
   );

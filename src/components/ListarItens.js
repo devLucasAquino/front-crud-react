@@ -3,8 +3,9 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 
 import ButtonDelete from "./ButtonDelete";
+import ButtonGravar from "./ButtonGravar";
 
-function ListarItens(){
+function ListarItens( {currentSabor} ){
 
   const [ list, setList ] = useState([]);
 
@@ -28,19 +29,20 @@ function ListarItens(){
 
 
     return(
-    <div className="Lista">
-      <h2 style={{color: 'white'}}>Sabores</h2>
-      <ul>
-        {list.map(item => (
-          <div key={item.id} style={{color: 'white'}}>{item.sabor}
-            <span>{item.sabor}</span>
+      <>
+      <ButtonGravar novoSabor={currentSabor} stateList={setList}/>
+      <div className="Lista">
+        <h2 style={{color: 'white'}}>Sabores</h2>
+        <ul>
+          {list.map(item => (
+            <div key={item.id} style={{color: 'white'}}>{item.sabor}
             <ButtonDelete itemId={item.id} onDelete={handleDelete}/>
-          
-          </div>
+            </div>
 
-        ))}
-      </ul>
-    </div>
+          ))}
+        </ul>
+      </div>
+    </>
     )
 }
 

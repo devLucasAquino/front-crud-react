@@ -5,7 +5,6 @@ function ButtonDelete({ itemId, onDelete }){
     function handleDelete(){
         axios.delete(`http://localhost:8080/pastelaria/delete/${itemId}`)
           .then(function (resposta) {
-            console.log('deletado com sucesso' + resposta.data);
             onDelete(itemId);
           })
           .catch(function (erro) {
