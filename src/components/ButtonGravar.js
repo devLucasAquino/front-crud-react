@@ -1,11 +1,10 @@
 import axios from 'axios';
 
-function ButtonGravar({novoSabor, updateScreen}) {
+function ButtonGravar({novoSabor}) {
 
-    function gravar(sabor){
+      function gravar(sabor){
         axios.post('http://localhost:8080/pastelaria/inserir', { sabor : sabor} )
           .then(function (resposta) {
-            updateScreen();
           })
           .catch(function (erro) {
             console.error('Erro ao listar dados:', erro);

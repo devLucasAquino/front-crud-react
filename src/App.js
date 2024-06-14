@@ -12,22 +12,8 @@ import './App.css';
 
 function App() {
 
-  const [ list, setList ] = useState([]);
+  
   const [ sabor, setSabor ] = useState('');
-
-  useEffect(() => {
-    listarDados();
-  }, []);
-
-  function listarDados(){
-    axios.get('http://localhost:8080/pastelaria/lista')
-      .then(function (resposta) {
-        setList(resposta.data)
-      })
-      .catch(function (erro) {
-        console.error('Erro ao listar dados:', erro);
-      });
-  }
 
   function handleInputChange(event){
     setSabor(event.target.value);
@@ -43,12 +29,11 @@ function App() {
         </input>
       </div>
       <div className='buttonContainer'>
-        <ButtonGravar novoSabor={sabor} updateScreen={listarDados}/>
+        <ButtonGravar novoSabor={sabor}/>
         {/* <ButtonAlterar/> */}
-        <ButtonDelete />
       </div>
 
-      <ListarItens dados={list}/>
+      <ListarItens/>
 
     </div>
   );
