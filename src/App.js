@@ -13,6 +13,7 @@ import './App.css';
 function App() {
 
   const [ list, setList ] = useState([]);
+  const [ sabor, setSabor ] = useState('');
 
   useEffect(() => {
     listarDados();
@@ -29,20 +30,28 @@ function App() {
       });
   }
 
-
-
+  function handleInputChange(event){
+    setSabor(event.target.value);
+  }
 
   return (
     <div className="App">
       <div className='inputContainer'>
-        <input className='inputElement' placeholder='Sabor do pastel'></input>
+        <input 
+          className='inputElement' 
+          value={sabor}
+          type='text'
+          onChange={handleInputChange}>
+        </input>
       </div>
       <div className='buttonContainer'>
-        <ButtonGravar teste={listarDados}/>
-        <ButtonAlterar />
+        <ButtonGravar novoSabor={sabor}/>
+        <ButtonAlterar/>
         <ButtonDelete />
       </div>
+
       <ListarItens dados={list}/>
+
     </div>
   );
 }

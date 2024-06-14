@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-function ButtonGravar() {
+function ButtonGravar({novoSabor}) {
 
     function gravar(sabor){
         axios.get('http://localhost:8080/pastelaria/inserir', { sabor : sabor} )
@@ -13,7 +13,7 @@ function ButtonGravar() {
       }
 
     return (
-      <button onClick={gravar}>GRAVAR</button>
+      <button onClick={gravar(novoSabor)}>GRAVAR</button>
     );
   }
 
@@ -32,6 +32,8 @@ export default ButtonGravar;
 //     function handleButtonClick() {
 //         enviarSaborDoPastel(sabor);
 //     }
+
+
 
 //     return (
 //         <div>

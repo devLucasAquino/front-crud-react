@@ -1,19 +1,19 @@
 import axios from 'axios';
 
-function ButtonAlterar(){
+function ButtonAlterar({updateSabor}){
 
-    function alterar(){
-        axios.get('http://localhost:8080/pastelaria/lista')
-          .then(function (resposta) {
-            console.log('alterado com sucesso' + resposta.data)
-          })
-          .catch(function (erro) {
-            console.error('Erro ao listar dados:', erro);
-          });
-      }
+    function alterar(sabor){
+      axios.get('http://localhost:8080/pastelaria/lista', {sabor : sabor})
+        .then(function (resposta) {
+          console.log('alterado com sucesso' + resposta.data)
+        })
+        .catch(function (erro) {
+          console.error('Erro ao listar dados:', erro);
+        });
+    }
 
     return(
-            <button onClick={alterar}>ALTERAR</button>
+            <button onClick={alterar(updateSabor)}>ALTERAR</button>
     )
 }
 
