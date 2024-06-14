@@ -22,7 +22,6 @@ function App() {
   function listarDados(){
     axios.get('http://localhost:8080/pastelaria/lista')
       .then(function (resposta) {
-        console.log(resposta)
         setList(resposta.data)
       })
       .catch(function (erro) {
@@ -44,8 +43,8 @@ function App() {
         </input>
       </div>
       <div className='buttonContainer'>
-        <ButtonGravar novoSabor={sabor}/>
-        <ButtonAlterar/>
+        <ButtonGravar novoSabor={sabor} updateScreen={listarDados}/>
+        {/* <ButtonAlterar/> */}
         <ButtonDelete />
       </div>
 

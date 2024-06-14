@@ -73,8 +73,7 @@ body{
 }
 
 .inputContainer > input:focus{
-  border-left: solid 2px #7f48c7;
-  border-bottom: solid 2px #7f48c7;
+  border-bottom: solid 3px #7f48c7;
   outline: none;
 }
 
@@ -94,4 +93,8 @@ body{
 
 .Lista ul{
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

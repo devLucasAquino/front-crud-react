@@ -1,11 +1,11 @@
 import axios from 'axios';
 
-function ButtonGravar({novoSabor}) {
+function ButtonGravar({novoSabor, updateScreen}) {
 
     function gravar(sabor){
-        axios.get('http://localhost:8080/pastelaria/inserir', { sabor : sabor} )
+        axios.post('http://localhost:8080/pastelaria/inserir', { sabor : sabor} )
           .then(function (resposta) {
-            console.log('gravado com sucesso' + resposta.data)
+            updateScreen();
           })
           .catch(function (erro) {
             console.error('Erro ao listar dados:', erro);
@@ -13,7 +13,7 @@ function ButtonGravar({novoSabor}) {
       }
 
     return (
-      <button style={{backgroundColor: 'green'}} onClick={gravar(novoSabor)}>GRAVAR</button>
+      <button style={{backgroundColor: 'green'}} onClick={() => gravar(novoSabor)}>GRAVAR</button>
     );
   }
 
