@@ -38,7 +38,6 @@ function App() {
     <div className="App">
       <div className='inputContainer'>
         <input 
-          className='inputElement' 
           value={sabor}
           type='text'
           onChange={handleInputChange}>

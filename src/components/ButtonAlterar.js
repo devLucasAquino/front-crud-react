@@ -13,7 +13,7 @@ function ButtonAlterar({updateSabor}){
     }
 
     return(
-            <button onClick={alterar(updateSabor)}>ALTERAR</button>
+            <button style={{backgroundColor: 'orange'}} onClick={alterar(updateSabor)}>ALTERAR</button>
     )
 }
 

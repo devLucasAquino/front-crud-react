@@ -13,7 +13,7 @@ function ButtonDelete(){
       }
 
     return(
-            <button onClick={deletar}>DELETAR</button>
+            <button style={{backgroundColor: 'red'}} onClick={deletar}>DELETAR</button>
     )
 }
 
