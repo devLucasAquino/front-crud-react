@@ -19,7 +19,6 @@ body{
   align-items: center;
 }
 
-
 .inputContainer{
   display: flex;
   flex-direction: column;
@@ -30,9 +29,10 @@ body{
 
 .buttonContainer{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  gap: 10px;
 
 }
 
