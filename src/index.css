@@ -27,3 +27,15 @@ body{
   align-items: center;
   gap: 3rem;
 }
+
+.buttonContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.Lista ul{
+  list-style: none;
+}
