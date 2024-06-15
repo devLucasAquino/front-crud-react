@@ -39,7 +39,10 @@ function ListarItens( {currentSabor} ){
       <>
       <ButtonGravar novoSabor={currentSabor} stateList={setList}/>
       <div className="Lista">
-        <h2 style={{color: 'white'}}>Sabores</h2>
+
+        {list.length !== 0 ? <h2 style={{color: 'white'}}>Sabores</h2>
+              : <h2></h2>}
+        
         <ul>
           {list.map(item => (
             <div className="linhaDeRegistro" key={item.id} style={{color: 'white'}}>
