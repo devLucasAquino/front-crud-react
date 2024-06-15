@@ -4,10 +4,12 @@ import { useState, useEffect } from "react";
 
 import ButtonDelete from "./ButtonDelete";
 import ButtonGravar from "./ButtonGravar";
+import ButtonAlterar from "./ButtonAlterar";
 
 function ListarItens( {currentSabor} ){
 
   const [ list, setList ] = useState([]);
+ 
 
     function handleDelete(itemId) {
       setList(list.filter(item => item.id !== itemId));
@@ -27,6 +29,11 @@ function ListarItens( {currentSabor} ){
       });
   }
 
+  function handleUpdate(itemId, updateSabor) {
+    setList(list.map(item => (item.id === itemId ? { ...item, sabor: updateSabor } : item)));
+}
+
+
 
     return(
       <>
@@ -35,9 +42,11 @@ function ListarItens( {currentSabor} ){
         <h2 style={{color: 'white'}}>Sabores</h2>
         <ul>
           {list.map(item => (
-            <div key={item.id} style={{color: 'white'}}>{item.sabor}
+            <div key={item.id} style={{color: 'white'}}>
+              <span>{item.sabor}</span>
             <ButtonDelete itemId={item.id} onDelete={handleDelete}/>
-            </div>
+            <ButtonAlterar itemId={item.id} updateSabor={currentSabor} onUpdate={handleUpdate} updateList={setList}/>
+              </div>
 
           ))}
         </ul>

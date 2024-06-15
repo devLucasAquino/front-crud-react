@@ -1,11 +1,17 @@
 import axios from 'axios';
 
-function ButtonAlterar({updateSabor}){
+function ButtonAlterar({itemId, updateSabor, onUpdate, updateList}){
 
-    function alterar(sabor){
-      axios.get('http://localhost:8080/pastelaria/lista', {sabor : sabor})
+    function alterar(){
+
+      if (!updateSabor) {
+        console.error("Sabor não pode estar vazio");
+        return;
+    }
+      axios.put(`http://localhost:8080/pastelaria/update/${itemId}/${updateSabor}`)
         .then(function (resposta) {
-          console.log('alterado com sucesso' + resposta.data)
+          onUpdate(itemId, updateSabor);
+          updateList(resposta.data)
         })
         .catch(function (erro) {
           console.error('Erro ao listar dados:', erro);
@@ -13,7 +19,7 @@ function ButtonAlterar({updateSabor}){
     }
 
     return(
-            <button style={{backgroundColor: 'orange'}} onClick={alterar(updateSabor)}>ALTERAR</button>
+            <button style={{backgroundColor: 'orange'}} onClick={alterar}>ALTERAR</button>
     )
 }
 

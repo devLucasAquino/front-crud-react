@@ -19,6 +19,7 @@ function App() {
     setSabor(event.target.value);
   }
 
+
   return (
     <div className="App">
       <div className='inputContainer'>
@@ -30,7 +31,7 @@ function App() {
       </div>
       <div className='buttonContainer'>
         
-        {/* <ButtonAlterar/> */}
+        
       </div>
 
       <ListarItens currentSabor={sabor}/>
