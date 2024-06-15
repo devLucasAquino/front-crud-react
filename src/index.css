@@ -104,6 +104,10 @@ body{
   gap: 6px;
 }
 
+.buttonContainer > button:hover {
+  cursor: pointer;
+}
+
 span{
   font-weight: 600;
   text-transform:uppercase;
