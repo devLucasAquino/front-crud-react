@@ -13,7 +13,7 @@ function ButtonGravar({novoSabor, stateList}) {
       }
 
     return (
-      <button style={{backgroundColor: 'green'}} onClick={() => gravar(novoSabor)}>GRAVAR</button>
+      <button className='buttonGravar' style={{backgroundColor: 'green'}} onClick={() => gravar(novoSabor)}>GRAVAR</button>
     );
   }
 

@@ -29,10 +29,6 @@ function App() {
           onChange={handleInputChange}>
         </input>
       </div>
-      <div className='buttonContainer'>
-        
-        
-      </div>
 
       <ListarItens currentSabor={sabor}/>
 

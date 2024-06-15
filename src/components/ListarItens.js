@@ -42,10 +42,12 @@ function ListarItens( {currentSabor} ){
         <h2 style={{color: 'white'}}>Sabores</h2>
         <ul>
           {list.map(item => (
-            <div key={item.id} style={{color: 'white'}}>
+            <div className="linhaDeRegistro" key={item.id} style={{color: 'white'}}>
               <span>{item.sabor}</span>
-            <ButtonDelete itemId={item.id} onDelete={handleDelete}/>
-            <ButtonAlterar itemId={item.id} updateSabor={currentSabor} onUpdate={handleUpdate} updateList={setList}/>
+              <div className="buttonContainer">
+                <ButtonAlterar itemId={item.id} updateSabor={currentSabor} onUpdate={handleUpdate} updateList={setList}/>
+                <ButtonDelete itemId={item.id} onDelete={handleDelete}/>
+              </div>
               </div>
 
           ))}

@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import Pen from '../assets/img/pen.svg'
+
 function ButtonAlterar({itemId, updateSabor, onUpdate, updateList}){
 
     function alterar(){
@@ -19,7 +21,9 @@ function ButtonAlterar({itemId, updateSabor, onUpdate, updateList}){
     }
 
     return(
-            <button style={{backgroundColor: 'orange'}} onClick={alterar}>ALTERAR</button>
+            <button style={{backgroundColor: 'orange'}} onClick={alterar}>
+              <img src={Pen} style={{width: '18px', height: '20px', padding: '1px'}}/>
+            </button>
     )
 }
 

@@ -77,24 +77,34 @@ body{
   outline: none;
 }
 
-.buttonContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
-.inputContainer > button {
-  border: none;
-  outline: none;
-  color: #fbf;
-}
-
 .Lista ul{
   list-style: none;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.buttonGravar{
+  font-size: 16px;
+  font-weight: 700;
+  color: #fbfbfb;
+  padding: 10px 50px;
+}
+
+.linhaDeRegistro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+}
+
+.buttonContainer{
+  display: flex;
+  gap: 6px;
+}
+
+span{
+  font-weight: 600;
+  text-transform:uppercase;
 }
