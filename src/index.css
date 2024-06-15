@@ -92,6 +92,10 @@ body{
   padding: 10px 50px;
 }
 
+.buttonGravar:hover{
+  cursor: pointer;
+}
+
 .linhaDeRegistro{
   display: flex;
   justify-content: center;
