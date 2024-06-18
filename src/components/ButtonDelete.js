@@ -15,7 +15,7 @@ function ButtonDelete({ itemId, onDelete }){
       }
 
     return(
-            <button style={{backgroundColor: 'red'}} onClick={handleDelete}>
+            <button id='ButtonDelete' onClick={handleDelete}>
               <img src={Trash} style={{width: '18px', height: '20px', padding: '1px'}}/>
             </button>
     )

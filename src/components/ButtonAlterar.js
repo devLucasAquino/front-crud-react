@@ -21,7 +21,7 @@ function ButtonAlterar({itemId, updateSabor, onUpdate, updateList}){
     }
 
     return(
-            <button style={{backgroundColor: 'orange'}} onClick={alterar}>
+            <button id='ButtonUpdate' onClick={alterar}>
               <img src={Pen} style={{width: '18px', height: '20px', padding: '1px'}}/>
             </button>
     )
